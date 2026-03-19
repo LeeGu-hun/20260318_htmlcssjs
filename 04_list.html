@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    #menu {
+      list-style: none;
+    }
+    #menu li {
+      float: left;
+      width: 70px;
+      background-color: pink;
+      text-align: center;
+      margin-right: 10px;
+    }
+    ul li::marker{
+      content: '😊'; font-size: 1em;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>목록 관련 태그</h1>
+  <a href="index.html"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <ol id="menu">
+    <li>File</li>
+    <li>Edit</li>
+    <li>View</li>
+    <li>Run</li>
+    <li>Info</li>
+  </ol>
+  <br>
+  <ul type="circle" style="clear: both;"><!-- square, circle, disc(기본) -->
+    <li>한식</li>
+    <li>중식</li>
+    <li>양식</li>
+    <li>분식</li>
+  </ul>
+  <ol type="a"><!-- 1(기본), A, a, I, i -->
+    <li>Coffee</li>
+    <li>Latte</li>
+    <li>Juice</li>
+    <li>IceCream</li>
+  </ol>
+</body>
+
+</html>
