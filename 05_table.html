@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    table, td, th {
+      width: 800px; height: 70px;
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>테이블 태그</h1>
+  <a href="index.html"><span class="material-symbols-outlined">home</span>Home</a>
+  <a href="05_tableEx.html">표실습</a>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>교시</th>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1교시</td>
+        <td>국어</td>
+        <td>영어</td>
+        <td rowspan="2">체육</td>
+      </tr>
+      <tr>
+        <td>2교시</td>
+        <td>수학</td>
+        <td>국어</td>
+      </tr>
+      <tr>
+        <td>3교시</td>
+        <td>영어</td>
+        <td>체육</td>
+        <td>수학</td>
+      </tr>
+      <tr>
+        <td>4교시</td>
+        <td colspan="3">자습</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
