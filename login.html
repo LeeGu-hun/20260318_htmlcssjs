@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <fieldset style="width: 220px;">
+    <legend>Login</legend>
+    <form action="index.html" metdod="post" id="frmLogin">
+      <table>
+        <tr>
+          <td>ID</td>
+          <td><input type="text" id="id" name="id"></td>
+        </tr>
+        <tr>
+          <td>PW</td>
+          <td><input type="password" id="pass" name="pass"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="로그인" id="loginBtn">
+            <input type="reset" value="취소"><br>
+            <button type="submit" formaction="/">가입</button>
+            <input type="button" value="가입" onclick="location.href='join.html'">
+            <input type="button" value="가입" id="joinBtn" onclick="goJoin()">
+          </td>
+          <script>
+            function goJoin() {
+              location.href = "join.html"
+            }
+          </script>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+</body>
+
+</html>
