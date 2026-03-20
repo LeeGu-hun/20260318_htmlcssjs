@@ -18,6 +18,9 @@
     #name:focus {
       background: pink;
     }
+    #notice:disabled~#result {
+      color: red;
+    }
   </style>
 </head>
 
@@ -34,10 +37,16 @@
   <input type="text" name="name" id="name">
   <div>
     <label for="view">선택 후 disabled</label>
-    <input type="checkbox" id="view">
-    <label id="notice">Notice</label>
+    <input type="checkbox" id="view" onclick="disableText()">
+    <input type="text" name="notice" id="notice">
+    <label id="result">경고</label>
   </div>
-
+  <script>
+    function disableText(){
+      const noti = document.querySelector("#notice");
+      noti.disabled = !noti.disabled; //#notice의 현재 disabled에 !를 연산
+    }
+  </script>
 </body>
 
 </html>
