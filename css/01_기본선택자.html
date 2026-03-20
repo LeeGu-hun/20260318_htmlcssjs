@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    /* 전체 선택자 */
+    * {
+      --margin: 0px;
+      padding: 0px;
+    }
+
+    /* 태그 선택자 */
+    body {
+      background-color: lemonchiffon;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      font-style: italic;
+    }
+
+    /* 아이디 선택자 */
+    #pick {
+      font-weight: bold; background-color: palevioletred;
+    }
+
+    /* 클래스 선택자 중복 적용 가능 공백으로 구분 */
+    .text-item {
+      text-decoration: underline;
+    }
+    .text-light {
+      font-family: "궁서체";
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>기본 선택자</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <ul>
+    <li class="text-item text-light">전체 선택자 *</li>
+    <li class="text-item">태그 선택자 </li>
+    <li class="text-light text-item" id="pick">아이디 선택자 </li>
+    <li class="text-item" id="pick">클래스 선택자</li>
+  </ul>
+
+</body>
+
+</html>
