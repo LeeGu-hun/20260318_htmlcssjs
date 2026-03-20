@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    #choice:checked~input[type=text] {
+      background-color: gold;
+    }
+    #name:focus {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>상태 선택자</h1>
+  <p>checked, focus, disabled</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <div>
+    <label for="choice">checked 선택</label>
+    <input type="checkbox" id="choice">
+    <input type="text">
+  </div>
+  <input type="text" name="name" id="name">
+  <div>
+    <label for="view">선택 후 disabled</label>
+    <input type="checkbox" id="view">
+    <label id="notice">Notice</label>
+  </div>
+
+</body>
+
+</html>
