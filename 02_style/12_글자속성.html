@@ -6,9 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <style>
-    
+    .noto-sans-kr {
+      font-family: "Noto Sans KR", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    .indie-flower-regular {
+      font-family: "Indie Flower", "맑은 고딕";
+      font-weight: 400;
+      font-style: normal;
+    }
   </style>
-  
+  <!-- 웹 폰트를 html에 적용할 때 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- 외부의 css 파일을 적용할 때 -->
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -17,8 +33,8 @@
   <hr>
   <!-- <font>deprecated</font> -->
   <ul>
-    <li>글꼴 지정</li>
-    <li>글꼴 웹폰트 지정</li>
+    <li class="indie-flower-regular">글꼴 지정 Font Style</li>
+    <li class="noto-sans-kr">글꼴 웹폰트 지정</li>
     <li>글꼴 크기 지정</li>
     <li>글꼴 생상 지정</li>
     <li>글꼴 weight 지정</li>
