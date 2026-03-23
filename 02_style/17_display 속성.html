@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    fieldset {display: inline;}
+    .outer {
+      width: 150px; height: 150px; background: aquamarine;
+    }
+    .inner {background: blue;color: white; width:60px;}
+  </style>
+</head>
+
+<body>
+  <h1>CSS의 display 속성</h1>
+  <p>none, inline, block, inline-block, table, table-cell, flex</p>
+  <a href="/"><span class="material-symbols-outlined">home</span></a>
+  <hr>
+  <p>display 속성과 visibility 속성의 비교</p>
+  <div>
+    <button type="button" style="visibility: visible;">visibility: visiblie(default)</button>
+    <button type="button" style="visibility: hidden;">visibility: hidden</button>
+    <button type="button" style="display: inline;">dispaly: inline(default)</button>
+    <button type="button" style="display: none;">dispaly: none</button>
+    <button type="button" style="display: inline-block;">dispaly: inline-block</button>
+    <button type="button" style="display: block;">dispaly: block</button>
+  </div>
+  <h4>block 안에 inline 위치 잡기</h4>
+  <fieldset>
+    <legend>block 안에 inline</legend>
+    <div class="outer" style="text-align: center;">
+      <span class="inner" style="line-height: 300px;">innner</span>
+    </div>
+  </fieldset>
+
+  <h4>block 안에 block 위치 잡기</h4>
+  <fieldset>
+    <legend>table-cell 이용하기1</legend>
+    <table style="display: table;" class="outer">
+      <tr>
+        <td style="display: table-cell;text-align: center;vertical-align: middle;">
+          <div class="inner" style="margin: 0 auto;">inner</div>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  <fieldset>
+    <legend>table-cell 이용하기2</legend>
+    <div class="outer" style="display: table-cell;vertical-align: middle;">
+      <div class="inner" style="margin: 0 auto;">inner</div>
+    </div>
+  </fieldset>
+
+</body>
+
+</html>

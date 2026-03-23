@@ -12,12 +12,12 @@
     .outer {
       width: 150px; height: 150px; background: aquamarine;
     }
-    .inner {background: blue;color: white;}
+    .inner {background: blue;color: white; width:60px;}
   </style>
 </head>
 
 <body>
-  <h1>CSS의 display 속성</h1>
+  <h1>CSS의 position 속성</h1>
   <p>none, inline, block, inline-block, table, table-cell, flex</p>
   <a href="/"><span class="material-symbols-outlined">home</span></a>
   <hr>
@@ -40,14 +40,20 @@
 
   <h4>block 안에 block 위치 잡기</h4>
   <fieldset>
-    <legend>table-cell 이용하기</legend>
+    <legend>table-cell 이용하기1</legend>
     <table style="display: table;" class="outer">
       <tr>
         <td style="display: table-cell;text-align: center;vertical-align: middle;">
-          <div class="inner">inner</div>
+          <div class="inner" style="margin: 0 auto;">inner</div>
         </td>
       </tr>
     </table>
+  </fieldset>
+  <fieldset>
+    <legend>table-cell 이용하기2</legend>
+    <div class="outer" style="display: table-cell;vertical-align: middle;">
+      <div class="inner" style="margin: 0 auto;">inner</div>
+    </div>
   </fieldset>
 
 </body>
