@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <!-- 웹 폰트를 html에 적용할 때 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <!-- 외부의 css 파일을 적용할 때 -->
+  <link rel="stylesheet" href="/css/style.css">
   <style>
     .noto-sans-kr {
       font-family: "Noto Sans KR", sans-serif;
@@ -18,34 +24,37 @@
       font-weight: 400;
       font-style: normal;
     }
+    li:nth-of-type(3) {font-size: 32px;}
+    li:nth-of-type(4) {color: tomato; color: #1886ec; color: rgb(255,0,0);}
+    li:nth-of-type(5) {font-weight: bolder;}
+    li:nth-of-type(6) {font-style:italic;}
+    li:nth-of-type(7) {text-decoration: line-through;}
+    li:nth-of-type(8) {text-decoration: overline;}
+    li:nth-of-type(9) {text-decoration: underline;}
+    li:nth-of-type(10) {font-variant: small-caps;}
   </style>
-  <!-- 웹 폰트를 html에 적용할 때 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <!-- 외부의 css 파일을 적용할 때 -->
-  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
   <h1>CSS의 글자 속성</h1>
-  <p></p>
+  <p>style을 적용하는 방법 3가지: inline방식, style 태그 적용, 외부 파일 적용</p>
   <hr>
-  <!-- <font>deprecated</font> -->
-  <ul>
-    <li class="indie-flower-regular">글꼴 지정 Font Style</li>
+  <ul> <!-- <font>deprecated</font> -->
+    <li class="indie-flower-regular" style="font-family: 'Times New Roman', Times;">글꼴 지정 Font Style</li>
+    <p>웹폰트를 적용하는 2가지: 로컬 방식, cdn 방식 </p>
     <li class="noto-sans-kr">글꼴 웹폰트 지정</li>
     <li>글꼴 크기 지정</li>
-    <li>글꼴 생상 지정</li>
+    <li>글꼴 색상 지정</li>
+    <p>색상 지정 방식 3가지: 이름 지정 방식, 헥사코드적용, 함수적용(rgb(),rgba())</p>
     <li>글꼴 weight 지정</li>
     <li>글꼴 italic 지정</li>
     <li>글꼴 del 지정</li>
     <li>글꼴 overline 지정</li>
     <li>글꼴 ins, underline 지정</li>
-    <li>글꼴 small-caps 지정</li>
-    <li>글꼴 super 지정</li>
-    <li>글꼴 sub 지정</li>
-    <li>글꼴 지정</li>
+    <li>글꼴 small-caps 지정(영어만 작게 대문자)</li>
+    <li>글꼴 super verticla-align 지정 x<span style="font-size: small;vertical-align: super;">2</span></li>
+    <li>글꼴 super relative 와 position지정 x<span style="font-size:small;position: relative;bottom: 1ex;">2</span></li>
+    <li>글꼴 H<span style="font-size:small;vertical-align: sub;">2</span>O</li>
+    <li>글꼴 H<span style="font-size:small;position: relative;bottom: -1ex;">2</span>O</li>
   </ul>
 
 </body>
