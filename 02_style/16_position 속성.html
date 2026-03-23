@@ -9,9 +9,9 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
   <style>
     body>div {
-      border: 3px solid black;width: 150px; height: 150px;
+      border: 3px solid black;width: 150px; height: 150px;position: relative;
     }
-    .box {width: 100px;height: 100px;position: static;}
+    .box {width: 100px;height: 100px;position: absolute;}
     .box:nth-child(1) {background: red; top: 10px;left: 10px;z-index: 1;}
     .box:nth-child(2) {background: green; top: 50px;left: 50px;z-index: 2;}
     .box:nth-child(3) {background: blue; top: 90px;left: 90px;z-index: 3;}
@@ -20,7 +20,8 @@
 
 <body>
   <h1>CSS의 position 속성</h1>
-  <p>position의 속성은 static(기본값), relative, absolute, fixed </p>
+  <p>position: static(기본값, 부모, top,left 적용불가), relative(부모, static 기준), absolute(문서), fixed(화면) </p>
+  <p>부모 태그를 기준으로 위치를 잡을 때: 부모(relative) 자식(absolute)</p>
   <a href="/"><span class="material-symbols-outlined">home</span></a>
   <hr>
   <div>
