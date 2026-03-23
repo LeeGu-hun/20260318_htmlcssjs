@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      background: yellow;
+      border: 2px solid black;
+      border-radius: 5px;
+    }
+
+    .item {
+      background: green;
+      margin: 5px;
+      border: 2px solid black;
+      border-radius: 5px;
+      color: white;
+    }
+  </style>
+  <script>
+    // window.onload = function () {
+    //   container1 = document.querySelector("#container1")
+    //   document.querySelector("#rbBlock").onclick = function () {
+    //     container1.style.display = "block";
+    //   }
+    //   document.querySelector("#rbFlex").onclick = function () {
+    //     container1.style.display = "flex";
+    //   }
+    //   document.querySelector("#rbInlineFlex").onclick = function () {
+    //     container1.style.display = "inline-flex";
+    //   }
+    // }
+
+    // function: 문서가 읽어지는 시점에서 별도의 기억공간에 저장되고 사용되는 시점에서 호출
+    function showGrp1(choice) {
+      cont1 = document.querySelector("#container1")
+      if (choice == "1") {
+        cont1.style.display = "block"
+      } else if (choice == "2") {
+        cont1.style.display = "flex"
+      } else if (choice == "3") {
+        cont1.style.display = "inline-flex"
+      }
+    }
+    function showGrp2(choice) {
+      cont2 = document.querySelector("#container2")
+      if (choice == "1") {
+        cont2.style.flexDirection = "row"
+      } else if (choice == "2") {
+        cont2.style.flexDirection = "column"
+      } else if (choice == "3") {
+        cont2.style.flexDirection = "row-reverse"
+      } else if (choice == "4") {
+        cont2.style.flexDirection = "column-reverse"
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <h1>display flex 속성</h1>
+  <p>flex</p>
+  <hr>
+
+  <fieldset>
+    <legend>container에 display속성을 block, flex, inline-flex로 변경</legend>
+    <p>flex는 기본적으로 float와 달리 contents영역의 크기가 동일하게 설정됨</p>
+    <label for="rbBlock"><input type="radio" name="grp1" id="rbBlock" checked onclick="showGrp1(1)">block</label>
+    <label for="rbFlex"><input type="radio" name="grp1" id="rbFlex" onclick="showGrp1(2)">flex</label>
+    <label for="rbInlineFlex"><input type="radio" name="grp1" id="rbInlineFlex"
+        onclick="showGrp1(3)">inline-flex</label>
+    <div id="container1" class="container">
+      <div class="item">aaa <br>aaa</div>
+      <div class="item">bbbbbbbbbb</div>
+      <div class="item">ccccc</div>
+    </div>
+  </fieldset>
+  <!-- <script>
+    container1 = document.querySelector("#container1")
+    document.querySelector("#rbBlock").onclick = function() {
+      container1.style.display = "block";
+    }
+    document.querySelector("#rbFlex").onclick = function() {
+      container1.style.display = "flex";
+    }
+    document.querySelector("#rbInlineFlex").onclick = function() {
+      container1.style.display = "inline-flex";
+    }
+  </script> -->
+
+  <fieldset>
+    <legend>container에 배치 방향 설정, flex-direction </legend>
+    <p></p>
+    <label for="rbRow"><input type="radio" name="grp2" id="rbRow" checked onclick="showGrp2(1)">row</label>
+    <label for="rbCol"><input type="radio" name="grp2" id="rbCol" onclick="showGrp2(2)">column</label>
+    <label for="rbRowRev"><input type="radio" name="grp2" id="rbRowRev" onclick="showGrp2(3)">row-reverse</label>
+    <label for="rbColRev"><input type="radio" name="grp2" id="rbColRev" onclick="showGrp2(4)">column-reverse</label>
+    <div id="container2" class="container" style="display: flex;">
+      <div class="item">aaa <br>aaa</div>
+      <div class="item">bbbbbbbbbb</div>
+      <div class="item">ccccc</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>container에 줄넘김 처리, flex-wrap</legend>
+    <p>컨테이너가 더 이상 아이템들을 한 줄에 담을 여유 공간이 없을 때</p>
+    <p>nowrap(기본), wrap, wrap-reverse</p>
+    <div class="container" style="display: flex;flex-wrap: wrap-reverse; width:170px">
+      <div class="item">aaa <br>aaa</div>
+      <div class="item">bbbbbbbbbb</div>
+      <div class="item">ccccc</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>container에 x축 방향 정렬, justify-content</legend>
+    <p>flex-start(기본), flex-end, center, space-between(item 사이에 균일한 간격), <br>
+      space-around(item 둘레에 균일한 간격), space-evenly(item 사이,둘레 균일한 간격)</p>
+    <div class="container" style="display: flex;justify-content: space-around" ;>
+      <div class="item">aaa <br>aaa</div>
+      <div class="item">bbbbbbbbbb</div>
+      <div class="item">ccccc</div>
+    </div>
+    <img src="../images/flex-space.jpg" alt="" width="400px">
+  </fieldset>
+
+  <fieldset>
+    <legend>container에 y축 방향 정렬, align-items</legend>
+    <p>stretch(기본), flex-start, flex-end, center, <br>
+      baseline(제일 큰 contents영역의 밑줄기준으로 정렬)</p>
+    <div class="container" style="display: flex; align-items: baseline; height: 200px;">
+      <div class="item" style="width: 20px;">bbbbbbbbbb</div>
+      <div class="item"><span style="font-size: 50px;">aaa</span></div>
+      <div class="item" style="margin-top: 100px;">ccccc</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>container에 여러 행 정렬, align-content</legend>
+    <p>stretch(기본), flex-start, flex-end, center, space-between(item 사이에 균일한 간격)<br>
+      space-around(item 둘레에 균일한 간격), space-evenly(item 사이,둘레 균일한 간격)</p>
+    <div class="container"
+      style="display: flex; flex-wrap: wrap;width: 11rem; height: 11rem; align-content: space-evenly; ">
+      <div class="item">aaa</div>
+      <div class="item">bbbbbbbbbb</div>
+      <div class="item">ccccc</div>
+    </div>
+  </fieldset>
+
+  <hr style="height: 30px;background-color: antiquewhite;">
+
+  <fieldset>
+    <legend>item에 기본 크기를 설정 flex-basis</legend>
+    <p>auto(기본값), 0, 50%, 300px, 10rem, content</p>
+    <style>
+      /* 작으면 70px, 크면 콘텐트 넓이 만큼 */
+      --.item1 {
+        flex-basis: 70px;
+      }
+
+      /* 작으면 콘텐트가 길어도 짤림 */
+      .item1 {
+        width: 70px;
+      }
+
+      /* 콘텐트를 아래로 줄바꿈 하게 함. */
+      --.item1 {
+        width: 70px;
+        word-wrap: break-word;
+      }
+    </style>
+    <div class="container" style="display: flex;">
+      <div class="item1 item">aaa</div>
+      <div class="item1 item">bbbbbbbbbb</div>
+      <div class="item1 item">ccccc</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>item에 기본 크기를 설정 flex-grow</legend>
+    <p>0(기본값), 1</p>
+    <style>
+      --.item2 {
+        flex-grow: 1;
+      }
+
+      /* 1:2:1의 비율로 세팅할 경우 콘텐트 나머지 공간을 비율로 조정함*/
+      .item2:nth-child(1) {
+        flex-grow: 1;
+      }
+
+      .item2:nth-child(2) {
+        flex-grow: 2;
+      }
+
+      .item2:nth-child(3) {
+        flex-grow: 1;
+      }
+    </style>
+    <div class="container" style="display: flex;">
+      <div class="item2 item">aaa</div>
+      <div class="item2 item">bbbbbbbbbb</div>
+      <div class="item2 item">ccccc</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>flex-shrink는 flex-grow와 쌍을 이루는
+      속성으로, 아이템이 flex-basis의 값보다 작아질
+      수 있는지를 결정</legend>
+    <p>flex-shrink는 0이면 flex-basis보다 크기가 자동으로 줄어들지 않는다.</p>
+    <p>flex-shrink는 1일때 해당 div는 크기가 유연하게 변한고 flex-basis보다 작아짐</p>
+    <style>
+      .item3 {
+        flex-basis: 150px;
+        flex-shrink: 0;
+      }
+
+      .item3:nth-child(1) {
+        flex-shrink: 0;
+        width: 100px;
+      }
+
+      .item3:nth-child(2) {
+        flex-grow: 1;
+      }
+    </style>
+    <div class="container" style="display: flex; width: 350px;">
+      <div class="item3 item">aaa</div>
+      <div class="item3 item">bbbbbbbbbb asfd asd fasdfas</div>
+      <div class="item3 item">ccccc</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>수직축으로 아이템 정렬 align-self</legend>
+    <p>align-items의 아이템 버전입니다. align-items가 전체 아이템의 수직축 방향 정렬이라면, align-self는 해당 아이템의 수직축 방향 정렬</p>
+    <p>flex-shrink는 1일때 해당 div는 크기가 유연하게 변한고 flex-basis보다 작아짐</p>
+    <style>
+      .item4 {
+        margin: 3px;
+        padding: 2px;
+        border: 3px solid currentColor;
+        border-radius: 3px;
+        font-weight: bold;
+        background: #26ab1c;
+        transition: 0.4s;
+      }
+    </style>
+    <div class="container" style="display: flex; height: 15rem;">
+      <div class="item4">AAA</div>
+      <div class="item4" style="align-self: center;">BBB</div>
+      <div class="item4" style="align-self: flex-start;">CCC</div>
+      <div class="item4">DDD</div>
+      <div class="item4">EEE</div>
+    </div>
+  </fieldset>
+
+  <pre>
+    flex-grow, flex-shrink, flex-basis를 한 번에 쓸 수 있는 축약형 속성
+    flex-grow : 전체공간을 유연하게 재분할,
+    flex-shrink : 0보단 큰값이 들어오면 유연한게 크기가 조정됨.
+    flex-basis : 아이템의 기본 크기를 지정
+    flex: 1;
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+    flex: 1 1 auto;
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+    flex: 1 500px;
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: 500px; */    
+  </pre>
+
+  <pre>
+    각 아이템들의 시각적 나열 순서를 결정하는 속성 ::> B,C,A 순서
+    .item:nth-child(1) { order: 3; } /* A */
+    .item:nth-child(2) { order: 1; } /* B */
+    .item:nth-child(3) { order: 2; } /* C */    
+  </pre>
+
+  <pre>
+    숫자가 클 수록 위로 올라감
+    .item:nth-child(2) {
+      z-index: 1;
+      transform: scale(2);
+    }   
+  </pre>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
