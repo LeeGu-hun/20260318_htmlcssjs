@@ -12,7 +12,7 @@
     .outer {
       width: 150px; height: 150px; background: aquamarine;
     }
-    .inner {background: blue;color: white; width:60px;}
+    .inner {background: blue;color: white; width:60px;height:60px;}
   </style>
 </head>
 
@@ -53,6 +53,12 @@
     <legend>table-cell 이용하기2</legend>
     <div class="outer" style="display: table-cell;vertical-align: middle;">
       <div class="inner" style="margin: 0 auto;">inner</div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>div와 div</legend>
+    <div class="outer" style="position: relative;">
+      <div class="inner" style="position: absolute;top:50%;left:50%;margin-top:-30px;margin-left:-30px;">inner</div>
     </div>
   </fieldset>
 

@@ -10,11 +10,13 @@
   <style>
     body>div {
       border: 3px solid black;width: 150px; height: 150px;position: relative;
+      overflow: scroll; /* 부모의 태그를 넘어섰을 때 처리하기 위한 옵션(hidden,scroll,auto,visible(default) */
+      overflow-x: scroll; /* scoll 적용시 옵션 */ 
     }
     .box {width: 100px;height: 100px;position: absolute;}
-    .box:nth-child(1) {background: red; top: 10px;left: 10px;z-index: 1;}
+    .box:nth-child(1) {background: red; top: 10px;left: 10px;z-index: 3;}
     .box:nth-child(2) {background: green; top: 50px;left: 50px;z-index: 2;}
-    .box:nth-child(3) {background: blue; top: 90px;left: 90px;z-index: 3;}
+    .box:nth-child(3) {background: blue; top: 90px;left: 90px;z-index: 1;}
   </style>
 </head>
 
