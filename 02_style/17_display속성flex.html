@@ -240,20 +240,6 @@
   </fieldset>
 
   <fieldset>
-    <legend>flex: flex-grow, flex-shrink, flex-basis를 합친 것</legend>
-    <style>
-      .item7 {
-        flex: 1;  /*flex-grow: 1;flex-shrink:1;flex-basis: 0;*/
-      }
-    </style>
-    <div class="container" style="display: flex; width: 350px;">
-      <div class="item7 item">aaa</div>
-      <div class="item7 item">bbbbbbbbbb asfd asd fasdfas</div>
-      <div class="item7 item">ccccc</div>
-    </div>
-  </fieldset>
-
-  <fieldset>
     <legend>align-self: 수직축으로 아이템 정렬 </legend>
     <p>align-items의 아이템 버전입니다. align-items가 전체 아이템의 수직축 방향 정렬이라면, align-self는 해당 아이템의 수직축 방향 정렬</p>
     <p>flex-shrink는 1일때 해당 div는 크기가 유연하게 변한고 flex-basis보다 작아짐</p>
@@ -277,35 +263,33 @@
     </div>
   </fieldset>
 
-  <pre>
-    flex-grow, flex-shrink, flex-basis를 한 번에 쓸 수 있는 축약형 속성
-    flex-grow : 전체공간을 유연하게 재분할,
-    flex-shrink : 0보단 큰값이 들어오면 유연한게 크기가 조정됨.
-    flex-basis : 아이템의 기본 크기를 지정
-    flex: 1;
-    /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
-    flex: 1 1 auto;
-    /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
-    flex: 1 500px;
-    /* flex-grow: 1; flex-shrink: 1; flex-basis: 500px; */    
-  </pre>
+  <fieldset>
+    <legend>flex: flex-grow, flex-shrink, flex-basis를 합친 것</legend>
+    <style>
+      .item7 {
+        flex: 1;
+        /*flex-grow: 1;flex-shrink:1;flex-basis: 0;*/
+      }
+    </style>
+    <div class="container" style="display: flex; width: 350px;">
+      <div class="item7 item">aaa</div>
+      <div class="item7 item">bbbbbbbbbb asfd asd fasdfas</div>
+      <div class="item7 item">ccccc</div>
+    </div>
+    <pre>
+      flex-grow, flex-shrink, flex-basis를 한 번에 쓸 수 있는 축약형 속성
+      flex-grow : 전체공간을 유연하게 재분할,
+      flex-shrink : 0보단 큰값이 들어오면 유연한게 크기가 조정됨.
+      flex-basis : 아이템의 기본 크기를 지정
+      flex: 1;
+      /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+      flex: 1 1 auto;
+      /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+      flex: 1 500px;
+      /* flex-grow: 1; flex-shrink: 1; flex-basis: 500px; */    
+    </pre>
+  </fieldset>
 
-  <pre>
-    각 아이템들의 시각적 나열 순서를 결정하는 속성 ::> B,C,A 순서
-    .item:nth-child(1) { order: 3; } /* A */
-    .item:nth-child(2) { order: 1; } /* B */
-    .item:nth-child(3) { order: 2; } /* C */    
-  </pre>
-
-  <pre>
-    숫자가 클 수록 위로 올라감
-    .item:nth-child(2) {
-      z-index: 1;
-      transform: scale(2);
-    }   
-  </pre>
-
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 
 </html>
