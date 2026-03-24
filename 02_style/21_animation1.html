@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    .box {
+      width: 100px; height: 100px; background-color: skyblue;position: relative;
+
+      animation-name: moveBox;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    @keyframes moveBox {
+      from {
+        left: 0;
+      } to {
+        left: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>css Animation 효과 주기 1</h1>
+  <p>@keyframes, from {} to {} 활용 </p>
+  <a href="/"><span class="material-symbols-outlined">home</span></a>
+  <hr>
+  <div class="box"></div>
+</body>
+
+</html>
