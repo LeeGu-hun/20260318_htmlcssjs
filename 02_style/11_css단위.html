@@ -40,9 +40,9 @@
     <li>in :: 1in = 2.54cm = 96px</li>
     <li>pc :: 1pc = 1in의 1/16</li>
   </ul>
-  <p>2. 상대적인 크기 em, %</p>
+  <p>2. 상대적인 크기 em, %, rem</p>
   <DIV id="divem">
-    <p>rem(root em) : em, %는 상대적 크기, 부모 요소 크기에 따라 유연하게 변하는 반응형의 단위</p>
+    <p>em, %는 상대적 크기, 부모 요소 크기에 따라 유연하게 변하는 반응형의 단위</p>
     font size( 14px )
     <div>
       font size (14 * 1.2 = 16.8px)
@@ -53,7 +53,15 @@
         </div>
       </div>
     </div>
+    <p>rem(root em) 항상 html 요소를 기준으로 계산됨</p>
+    <style>
+      html { font-size: 16px; }
+    </style>
+    <div style="font-size: 20px;">Parent
+      <div style="font-size: 2rem;">Child(font size: 32px) 부모태그 상관 없이 html 태그만 기준</div>
+    </div>
   </DIV>
+
   <p>3. 각도 단위 deg, grad, rad, turn</p>
   <ul>
     <li>deg :: 도를 지칭, 360도가 완전한 원</li>
