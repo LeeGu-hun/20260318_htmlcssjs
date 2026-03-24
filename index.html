@@ -5,64 +5,78 @@
 	<meta charset="UTF-8">
 	<title>Welcome HTML</title>
 	<style>
-		div {
-			width: 250px;
-			border: 1px dashed black;
-			--display: inline-block;
-			float: left;
+		.container {
+			display: flex; justify-content: stretch; gap: 10px; margin-bottom: 30px;
 		}
+		.container>div {
+			border: 1px dashed black; border-radius: 15px;
+			flex-grow: 1; flex-basis: 0;
+		}
+		h3 { padding-left: 20px;}
 	</style>
 </head>
-
 <body>
-	<h1>HTML 태그</h1>
+	<h1>HTML5, CSS3, Javascript 태그</h1>
 	<p><a href="/01_html/login.html">로그인</a> / <a href="/01_html/join.html">회원가입</a></p>
 	<hr>
-	<div>
-		<ol>
-			<li><a href="/01_html/01_text.html">글자 관련 태그</a></li>
-			<li><a href="/01_html/02_image.html">이미지 관련 태그</a></li>
-			<li><a href="/01_html/03_a.html#04">하이퍼링크 태그</a></li>
-			<li><a href="/01_html/04_list.html">목록 관련 태그</a></li>
-			<li><a href="/01_html/05_table.html">테이블 태그</a></li>
-			<li><a href="/01_html/06_media.html">미디어 관련 태그</a></li>
-			<li><a href="/01_html/07_div_span.html">공간 관련 태그</a></li>
-			<li><a href="/01_html/08_semantic.html">semantic 태그</a></li>
-			<li><a href="/01_html/09_form.html">입력 양식 태그</a></li>
-		</ol>
-	</div>
-	<div>
-		<ol>
-			<li><a href="/02_style/01_기본선택자.html">기본 선택자</a></li>
-			<li><a href="/02_style/02_속성선택자.html">속성 선택자</a></li>
-			<li><a href="/02_style/03_후손선택자.html">후손 선택자</a></li>
-			<li><a href="/02_style/04_동위선택자.html">동위 선택자</a></li>
-			<li><a href="/02_style/05_반응선택자.html">반응 선택자</a></li>
-			<li><a href="/02_style/06_상태선택자.html">상태 선택자</a></li>
-			<li><a href="/02_style/07_구조선택자.html">구조 선택자</a></li>
-			<li><a href="/02_style/08_링크선택자.html">링크 선택자</a></li>
-			<li><a href="/02_style/09_문자선택자.html">문자 선택자</a></li>
-			<li><a href="/02_style/10_부정선택자.html">부정 선택자</a></li>
-			<li><a href="/02_style/11_css단위.html">css 단위</a></li>
-			<li><a href="/02_style/12_글자속성.html">글자 속성</a></li>
-			<li><a href="/02_style/13_background속성.html">background 속성</a></li>
-			<li><a href="/02_style/14_box속성.html">box 속성</a></li>
-			<li><a href="/02_style/15_float속성.html">float 속성</a></li>
-			<li><a href="/02_style/16_position속성.html">position 속성</a></li>
-			<li><a href="/02_style/17_display속성.html">display 속성</a></li>
-			<li><a href="/02_style/18_display속성flex.html">display 속성 flex</a></li>
-			<li><a href="/02_style/19_shadow_gradient.html">shadow와 gradient 속성</a></li>
-			<li><a href="/02_style/20_css내장함수.html">css 내장 함수</a></li>
-			<li>css 애니매이션 효과
-				<ul type="disc">
-					<li><a href="/02_style/21_animation1.html">실습 1</a></li>
-					<li><a href="/02_style/21_animation2.html">실습 2</a></li>
-					<li><a href="/02_style/21_animation3.html">실습 3</a></li>
-				</ul>
-			</li>
-			<li><a href="/02_style/22_mobile.html">반응형 웹</a></li>
-			<li><a href="/02_style/23_ex01.html">실습1 - ID 카드 만들기</a></li>
-		</ol>
+	<div class="container">
+		<div>
+			<h3>HTML</h3>
+			<ol>
+				<li><a href="/01_html/01_text.html">글자 관련 태그</a></li>
+				<li><a href="/01_html/02_image.html">이미지 관련 태그</a></li>
+				<li><a href="/01_html/03_a.html#04">하이퍼링크 태그</a></li>
+				<li><a href="/01_html/04_list.html">목록 관련 태그</a></li>
+				<li><a href="/01_html/05_table.html">테이블 태그</a></li>
+				<li><a href="/01_html/06_media.html">미디어 관련 태그</a></li>
+				<li><a href="/01_html/07_div_span.html">공간 관련 태그</a></li>
+				<li><a href="/01_html/08_semantic.html">semantic 태그</a></li>
+				<li><a href="/01_html/09_form.html">입력 양식 태그</a></li>
+			</ol>
+		</div>
+		<div>
+			<h3>CSS</h3>
+			<ol>
+				<li><a href="/02_style/01_기본선택자.html">기본 선택자</a></li>
+				<li><a href="/02_style/02_속성선택자.html">속성 선택자</a></li>
+				<li><a href="/02_style/03_후손선택자.html">후손 선택자</a></li>
+				<li><a href="/02_style/04_동위선택자.html">동위 선택자</a></li>
+				<li><a href="/02_style/05_반응선택자.html">반응 선택자</a></li>
+				<li><a href="/02_style/06_상태선택자.html">상태 선택자</a></li>
+				<li><a href="/02_style/07_구조선택자.html">구조 선택자</a></li>
+				<li><a href="/02_style/08_링크선택자.html">링크 선택자</a></li>
+				<li><a href="/02_style/09_문자선택자.html">문자 선택자</a></li>
+				<li><a href="/02_style/10_부정선택자.html">부정 선택자</a></li>
+				<li><a href="/02_style/11_css단위.html">css 단위</a></li>
+				<li><a href="/02_style/12_글자속성.html">글자 속성</a></li>
+				<li><a href="/02_style/13_background속성.html">background 속성</a></li>
+				<li><a href="/02_style/14_box속성.html">box 속성</a></li>
+				<li><a href="/02_style/15_float속성.html">float 속성</a></li>
+				<li><a href="/02_style/16_position속성.html">position 속성</a></li>
+				<li><a href="/02_style/17_display속성.html">display 속성</a></li>
+				<li><a href="/02_style/18_display속성flex.html">display 속성 flex</a></li>
+				<li><a href="/02_style/19_shadow_gradient.html">shadow와 gradient 속성</a></li>
+				<li><a href="/02_style/20_css내장함수.html">css 내장 함수</a></li>
+				<li>css 애니매이션 효과
+					<ul type="disc">
+						<li><a href="/02_style/21_animation1.html">실습 1</a></li>
+						<li><a href="/02_style/21_animation2.html">실습 2</a></li>
+						<li><a href="/02_style/21_animation3.html">실습 3</a></li>
+					</ul>
+				</li>
+				<li><a href="/02_style/22_mobile.html">반응형 웹</a></li>
+				<li><a href="/02_style/23_ex01.html">실습1 - ID 카드 만들기</a></li>
+			</ol>
+		</div>
+		<div>
+			<h3>Javascript</h3>
+			<ol>
+				<li><a href="/03_js/01_variable.html">변수(Variable) 선언과 종류</a></li>
+			</ol>
+		</div>
+		<div>
+			<h3>DOM API</h3>
+		</div>
 	</div>
 </body>
 

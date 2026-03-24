@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    table,th,td {
+      border: 1px solid black;border-collapse: collapse;text-align: center;
+    }
+  </style>
+  <script>
+    // 출력하기 위한 방법
+    console.log("hello world~!") // 개발자 도구의 console로 출력
+    document.write("Hello World")// document에 출력
+    alert("hello world") // 알림창에서 출력
+    
+  </script>
+</head>
+
+<body>
+  <h1>자바스크립트 변수</h1>
+  <p>선언과 명명법, 종류</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <h3>변수의 명명법</h3>
+  <ul>
+    <li>변수의 이름은 영문자(대소문자)와 숫자, '_','$'만 사용</li>
+    <li>변수의 시작은 숫자를 제외한 나머지로 시작</li>
+    <li>변수의 이름에 2 단어 이상이 합쳐질 경우 Camel Expression 적용</li>
+    <li>변수명은 다른 사람이 보더라도 변수의 의미를 이해할 수 있는 이름을 붙임</li>
+    <li>예약어(var, let, null, undefined, number, for, if ...)는 제외</li>
+  </ul>
+  <h3>변수의 할당(선언+초기화)</h3>
+  <ul>
+    <li>num = 10 // 암묵적 전역공간에 변수가 생겨서 진행시 충돌 가능성(실무 비추)</li>
+    <li>var num = 10 // 의도하여 선언하는 방식</li>
+    <li>let num = 10</li>
+    <li>const num = 10</li>
+    <table>
+      <tr>
+        <th>제어자(Modifier)</th>
+        <th>재선언</th>
+        <th>재할당</th>
+        <th>Scope(범위)</th>
+      </tr>
+      <tr>
+        <td>var</td>
+        <td>ok</td>
+        <td>ok</td>
+        <td>함수 scope</td>
+      </tr>
+      <tr>
+        <td>let</td>
+        <td>no</td>
+        <td>ok</td>
+        <td>블록 scope</td>
+      </tr>
+      <tr>
+        <td>const</td>
+        <td>no</td>
+        <td>no</td>
+        <td>블록 scope</td>
+      </tr>
+    </table>
+  </ul>
+  
+
+
+</body>
+
+</html>
