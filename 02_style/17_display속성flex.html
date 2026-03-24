@@ -119,10 +119,10 @@
   </fieldset>
 
   <fieldset>
-    <legend>container에 x축 방향 정렬, justify-content</legend>
-    <p>flex-start(기본), flex-end, center, space-between(item 사이에 균일한 간격), <br>
+    <legend>justify-content: container에 x축(가로) 방향 정렬, 각 item들의 정렬</legend>
+    <p>flex-start(기본), flex-end, center, stretch, space-between(item 사이에 균일한 간격), <br>
       space-around(item 둘레에 균일한 간격), space-evenly(item 사이,둘레 균일한 간격)</p>
-    <div class="container" style="display: flex;justify-content: space-evenly" ;>
+    <div class="container" style="display: flex;justify-content: stretch" ;>
       <div class="item">aaa <br>aaa</div>
       <div class="item">bbbbbbbbbb</div>
       <div class="item">ccccc</div>
@@ -131,10 +131,10 @@
   </fieldset>
 
   <fieldset>
-    <legend>container에 y축 방향 정렬, align-items</legend>
+    <legend>align-items: container에 y축(세로) 방향 정렬, 각 item들의 정렬</legend>
     <p>stretch(기본), flex-start, flex-end, center, <br>
       baseline(제일 큰 contents영역의 밑줄기준으로 정렬)</p>
-    <div class="container" style="display: flex; align-items: baseline; height: 200px;">
+    <div class="container" style="display: flex; align-items: stretch; height: 200px;">
       <div class="item" style="width: 20px;">bbbbbbbbbb</div>
       <div class="item"><span style="font-size: 50px;">aaa</span></div>
       <div class="item" style="">ccccc</div>
@@ -142,22 +142,25 @@
   </fieldset>
 
   <fieldset>
-    <legend>container에 여러 행 정렬, align-content</legend>
+    <legend>align-content: container에 여러 행 정렬, flex-wrap: wrap일때 여러 줄들의 정렬</legend>
     <p>stretch(기본), flex-start, flex-end, center, space-between(item 사이에 균일한 간격)<br>
       space-around(item 둘레에 균일한 간격), space-evenly(item 사이,둘레 균일한 간격)</p>
     <div class="container"
-      style="display: flex; flex-wrap: wrap;width: 11rem; height: 11rem; align-content: stretch; ">
+      style="display: flex; flex-wrap: wrap; width: 11rem; height: 11rem; align-content: space-between; ">
       <div class="item">aaa</div>
       <div class="item">bbbbbbbbbb</div>
       <div class="item">ccccc</div>
+      <div class="item">ddddddddd</div>
+      <div class="item">eeeeeeeeeeeeeeeeeeeee</div>
     </div>
   </fieldset>
 
   <hr style="height: 30px;background-color: antiquewhite;">
 
   <fieldset>
-    <legend>item에 기본 크기를 설정 flex-basis</legend>
+    <legend>flex-basis: item에 기본적인 크기를 설정 가변, width는 크기 불변</legend>
     <p>auto(기본값), 0, 50%, 300px, 10rem, content</p>
+    <p>flex-basis: 0 의미는 남는 공간을 비율로 나누겠다.</p>
     <style>
       /* 작으면 70px, 크면 콘텐트 넓이 만큼 */
       --.item1 {
@@ -165,12 +168,12 @@
       }
 
       /* 작으면 콘텐트가 길어도 짤림 */
-      .item1 {
+      --.item1 {
         width: 70px;
       }
 
       /* 콘텐트를 아래로 줄바꿈 하게 함. */
-      --.item1 {
+      .item1 {
         width: 70px;
         word-wrap: break-word;
       }
@@ -183,7 +186,7 @@
   </fieldset>
 
   <fieldset>
-    <legend>item에 기본 크기를 설정 flex-grow</legend>
+    <legend>flex-grow: item들의 공간을 분배, 비율로 조정</legend>
     <p>0(기본값), 1</p>
     <style>
       --.item2 {
@@ -211,9 +214,7 @@
   </fieldset>
 
   <fieldset>
-    <legend>flex-shrink는 flex-grow와 쌍을 이루는
-      속성으로, 아이템이 flex-basis의 값보다 작아질
-      수 있는지를 결정</legend>
+    <legend>flex-shrink는 flex-grow와 쌍을 이루는 속성, 아이템이 flex-basis의 값보다 작아질 수 있는지를 결정</legend>
     <p>flex-shrink는 0이면 flex-basis보다 크기가 자동으로 줄어들지 않는다.</p>
     <p>flex-shrink는 1일때 해당 div는 크기가 유연하게 변한고 flex-basis보다 작아짐</p>
     <style>
@@ -238,6 +239,19 @@
     </div>
   </fieldset>
 
+  <fieldset>
+    <legend>flex: flex-grow, flex-shrink, flex-basis를 합친 것</legend>
+    <style>
+      .item7 {
+        flex: 1;  /*flex-grow: 1;flex-shrink:1;flex-basis: 0;*/
+      }
+    </style>
+    <div class="container" style="display: flex; width: 350px;">
+      <div class="item7">aaa</div>
+      <div class="item7">bbbbbbbbbb asfd asd fasdfas</div>
+      <div class="item7">ccccc</div>
+    </div>
+  </fieldset>
   <fieldset>
     <legend>수직축으로 아이템 정렬 align-self</legend>
     <p>align-items의 아이템 버전입니다. align-items가 전체 아이템의 수직축 방향 정렬이라면, align-self는 해당 아이템의 수직축 방향 정렬</p>
