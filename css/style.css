@@ -1,2 +1,20 @@
 /* description */
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+#card {
+  width: 220px;
+  height: 360px;
+  text-align: center;
+  margin: 100px auto;
+  box-shadow: 2px 0 3px #a9a9a9, -2px 0 3px #a9a9a9;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+#card p {
+  font-size: 11pt;
+}
