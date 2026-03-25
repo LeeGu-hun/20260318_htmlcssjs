@@ -76,6 +76,35 @@
         <td>false false</td><td>false</td><td>false</td>
       </tr>
     </table>
+    <h4>Truthy value</h4>
+    <ol>
+      <li>true</li>
+      <li>0을 제외한 정수, 실수, Infinity, -Infinity</li>
+      <li>빈문자열("", '')을 제외한 모든 문자열</li>
+      <li>참조형 객체(Object, 내장객체, 배열, class)</li>
+      <li>{} 빈 객체, [] 빈 배열</li>
+      <li>function</li>
+      <li>DOM, BOM 사전 정의된 객체들</li>
+    </ol>
+    <h4>Falsy value</h4>
+    <ol>
+      <li>false</li>
+      <li>undefined, null</li>
+      <li>NaN (Not a Number)</li>
+      <li>0, -0</li>
+      <li>"", '' 빈문자열</li>
+      <li>[]가 연산자를 만나면 ''또는 ""이 되어서 빈문자열로 인식</li>
+      <li>document.all, alert() 반환되는 값이 없어서 undefined가 됨</li>
+    </ol>
+    <script>
+      const b1 = 1 < 2; const b2 = false;
+      console.log("b1 && b2", b1 && b2)
+      console.log("b1 && !b2", b1 && !b2)
+      console.log(!b1 && (!b2 || 'A') < 'a') //비교 연산자가 논리 연산자보다 우선순위가 높다.
+      //&&논리곱 연산자가 2개 이상일경우 첫번째 falsy한 값을 반영, 모두 true일 경우 맨 마지막이 값을 반영
+      console.log(!b1 && b2 && ('A' < 'a')) // 첫번째 falsy값이 나오면 결과 반영
+      console.log(b1 && !b2 && ('A' < 'a')) // 모두가 truty값이면 맨 끝에 결과 반영
+    </script>
   </ul>
 
 
