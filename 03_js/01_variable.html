@@ -109,7 +109,7 @@
       add1()
       console.log(c)
       // const d; d = 100; // 상수는 선언과 초기화를 분리 불가
-      
+
     </script>
   </ul>
 
@@ -184,6 +184,26 @@
       </tr>
     </tbody>
   </table>
+
+  <h3>변수의 scope</h3>
+  <span>var의 scope</span>
+  <script>
+    if (true) { var scopeVar = 10; }
+    console.log("scopeVar: ", scopeVar) // 함수외는 전역변수
+    function temp(){
+      var scopeFncVar = 20;
+    }
+    // console.log(scopeFncVar); // 함수안에서만 유효
+  </script>
+  <span>let, const의 scope</span>
+  <script>
+    if (true) { let scopeLet = 10; }
+    console.log("scopeLet: ", scopeLet) // 블록안에서만 유효
+    function temp(){
+      var scopeFncLet = 20;
+    }
+    console.log(scopeFncLet); // 블록안에서만 유효
+  </script>
 
 </body>
 

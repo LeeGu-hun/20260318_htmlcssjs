@@ -74,11 +74,60 @@
       <li>symbol: 절대 중복되지 않는 고유한 식별자를 만들때 사용(ES6)</li>
       <script>
         var s = Symbol("Hello World~!")
-        console.log("Symbol s: ", s, typeof(s))
+        console.log("Symbol s: ", s, typeof (s))
       </script>
     </ul>
 
     <li>참조타입(Referenced Type)</li>
+    <span>주소값, 주소에 가면 집합군에 접근</span>
+    <ul type="disc">
+      <li>object</li>
+      <script>
+        let student = {
+          name: '고길동', age: 10,
+          master: function () {
+            console.log("소드 마스터~!")
+          }
+        }
+        console.log("고길동 소드마스터: ", student, typeof (student))
+        student.master();
+      </script>
+      <li>Array</li>
+      <script>
+        let arr = [0, 1, 2, 3, 4]
+        console.log("arr: ", arr, typeof (arr))
+      </script>
+      <li>function</li>
+      <script>
+        function add(a, b) {
+          return a + b;
+        }
+        console.log("function add: ", add, typeof (add))
+      </script>
+      <li>DOM, BOM</li>
+      <script>
+        console.log(typeof (docuement))
+        console.log(typeof (window))
+      </script>
+      <li>내장 객체(Date, Math, ...)</li>
+      <script>
+        const d = new Date();
+        console.log(d, typeof (d))
+      </script>
+    </ul>
+    <li>변수의 형변환</li>
+    <span>var, let, 제어자 없이 선언해도 타입의 변환이 자유롭다</span>
+    <script>
+      var tot = 100;
+      console.log(tot, typeof(tot))
+      tot = true;
+      console.log(tot, typeof(tot))
+
+      let sum = 100;
+      console.log(sum, typeof(sum))
+      sum = true;
+      console.log(sum, typeof(sum))
+    </script>
   </ol>
 
 </body>
