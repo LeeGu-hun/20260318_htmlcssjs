@@ -51,13 +51,30 @@
       <li>string: 문자열</li>
       <script>
         var str = "Hello World~!"
-        console.log(str, typeof(str))
+        console.log(str, typeof (str))
       </script>
       <li>boolean: true, false</li>
       <script>
         var isRight = true; var isCorrect = false;
-        console.log(isRight, typeof(isRight))
-        console.log(isCorrect, typeof(isCorrect))
+        console.log(isRight, typeof (isRight))
+        console.log(isCorrect, typeof (isCorrect))
+      </script>
+      <li>undefined: 값이 초기화 되지 않을 때 값을 출력</li>
+      <script>
+        var varUndefined;
+        console.log("var undefined:", varUndefined, typeof (varUndefined))
+        let letUndefined;
+        console.log("let undefined: ", letUndefined, typeof (letUndefined))
+      </script>
+      <li>null: 값이 없음을 의도적으로 명시할 때 사용, 타입은 object</li>
+      <script>
+        var x = null;
+        console.log("null x :", x, typeof (x))
+      </script>
+      <li>symbol: 절대 중복되지 않는 고유한 식별자를 만들때 사용(ES6)</li>
+      <script>
+        var s = Symbol("Hello World~!")
+        console.log("Symbol s: ", s, typeof(s))
       </script>
     </ul>
 
