@@ -58,14 +58,30 @@
       console.log(arr2); console.log(arr1)
 
       const arr3 = arr1.splice(0, 2); // splice() 잘라내기 배열원소추출(원본갱신),마지막 인자 제외
-      console.log(arr3); console.log("splice() 잘라내기 후: ",arr1)
+      console.log("arr3:", arr3); console.log("splice() 잘라내기 후: ", arr1)
 
-      arr1.splice(arr3) // splice() 합치기
-      console.log("splice() 합치기 후: ",arr1)
+      arr1.splice(0, 0, 10, 20) // splice(인덱스, 삭제할 길이, 값1, 값2, ...) 0번째에 지우는거 없이 값들 추가
+      console.log("splice() 추가 후: ", arr1)
+      arr1.splice(0, 2, 1, 2)
+      console.log("splice() 교체 후: ", arr1) // 1,2,30,40,50
 
-      console.log(arr3.indexOf(3)) // 7,2만 있기 때문에 3이 없음 그래서 -1을 반환
-      console.log(arr1.indexOf(3)) // 7,2만 있기 때문에 3이 없음 그래서 -1을 반환
+      const arr4 = arr1.concat(arr3) // concat() 합치기
+      console.log("concat() 합치기 후: ", arr4)
 
+      console.log("=== 배열 문자열로 바꾸기 ===")
+      console.log("join() 후:", arr1.join()) // 
+      console.log("join() 후:", arr1.join("/"))
+      console.log("toString() 후:", arr1.toString());
+
+      console.log("=== 배열 순서 바꾸기 ===")
+      let arr5 = [1,2,3,4,5]
+      console.log(arr5)
+      console.log("reverse() 역순 후:",arr5.reverse())
+      console.log("sort() 정렬 후:",arr5.sort())
+
+      let arr6 = [10, 2, 30, 1]
+      console.log("sort() 정렬 후:",arr6.sort())
+      
     </script>
   </ol>
 
