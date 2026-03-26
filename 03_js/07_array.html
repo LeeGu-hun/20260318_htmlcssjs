@@ -74,14 +74,50 @@
       console.log("toString() 후:", arr1.toString());
 
       console.log("=== 배열 순서 바꾸기 ===")
-      let arr5 = [1,2,3,4,5]
+      let arr5 = [1, 2, 3, 4, 5]
       console.log(arr5)
-      console.log("reverse() 역순 후:",arr5.reverse())
-      console.log("sort() 정렬 후:",arr5.sort())
-
+      console.log("reverse() 역순 후:", arr5.reverse())
+      console.log("sort() 정렬 후:", arr5.sort())
       let arr6 = [10, 2, 30, 1]
-      console.log("sort() 정렬 후:",arr6.sort())
-      
+      console.log("sort() 정렬 후:", arr6.sort()) // sort() 원소를 문자열로 변경후 정렬 1,10,2,30
+      arr6.sort(function (a, b) {
+        return a - b; // 오름차순
+        // return b-a; // 내림차순
+      })
+      console.log("sort() 정렬 후:", arr6)
+
+      console.log("=== 배열 탐색, 존재여부 바꾸기 ===")
+      let arr7 = ["a", "b", "c", "d"]
+      console.log(arr7.indexOf("a"))  //0
+      console.log(arr7.indexOf("z"))  //-1
+      console.log(arr7.includes("x")) //false 
+      console.log(arr7.find(function (item) {
+        return item == 'b'
+      })) // 찾으면 b 반환
+      // findIndex()
+
+      console.log("=== 배열 반복 처리 ===")
+      // forEach(), map(), filter(), reduce(), some(), every()
+
+      console.log("=== 배열 평탄화 ===")
+      let arr8 = [1, [2, 3], [4, 5]]
+      console.log(arr8.flat()) // [1,2,3,4,5] 1 차원 배열로 평탄화
+      // flatMap()
+
+      console.log("=== 배열 확인 ===")
+      console.log(Array.isArray(arr8)) // 배열 맞음 true
+      console.log(Array.isArray("hello")) // 배열 아님 false
+
+      // 2차원 배열
+      let arr2d = [[1, 2, 3], [4, 5, 6]]; // 2행 3열
+
+      for (let i = 0; i < arr2d.length; i++) {
+        for (let j = 0; j < arr2d[0].length; j++) {
+          if (j != 0) document.write(",")
+          document.write(arr2d[i][j])
+        }
+        document.write("<br>")
+      }
     </script>
   </ol>
 
