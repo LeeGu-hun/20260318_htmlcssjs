@@ -123,9 +123,9 @@
       console.log("논리합 연산===============")
       console.log([] == false) // []가 비교연산자를 만나면 false => true
       console.log({} == false) // {}가 비교연산자를 만나면 true => false
-      console.log(`"0" || null || undefined :`, "0" || null || undefined) 
+      console.log(`"0" || null || undefined :`, "0" || null || undefined)
       // ||논리합 연산자가 2개 이상일때 첫번째 truthy한 값 반영, 모두 falsy일 경우 맨 마지막이 값 반영
-      console.log(`0 || null || undefined :`, 0 || null || undefined) 
+      console.log(`0 || null || undefined :`, 0 || null || undefined)
       console.log(-1 || 0)
       console.log(-1 && 0)
       console.log(null || 2 || undefined)
@@ -133,8 +133,54 @@
       console.log(null || -1 || 1)
       console.log(null || -1 && 1)
     </script>
-  </ul>
 
+    <li>단항 연산자 ( ++, -- )</li>
+    <script>
+      let a = 1;
+      a = a + 1;
+      console.log(a++); // 2, 후위단항연산자는 다음줄에 반영
+      console.log(++a); // 4, 전위단항연산자는 현재줄에 반영
+      x = 7; y = 3;
+      console.log(x++, ++x + ++y)
+    </script>
+
+    <li>대입 연산자 ( =, +=, -=, *=, /=, %=, **= )</li>
+    <script>
+      let z = 1;
+      z++; z = z + 1; z += 1;
+      z *= 2; // z = z * 2;
+      let l = 5; let m = 2; let n = 3;
+      l += m++ * --n;
+      m *= l - n++;
+      n = l %= m;
+      console.log(l, m, n) // 9, 21, 9
+    </script>
+
+    <li>삼항 연산자 ( 조건 ? 참 : 거짓 ) </li>
+    <script>
+      // var num = prompt("숫자를 입력하세요")
+      // console.log(!isNaN(num)?"숫자가 맞아요":"숫자가 아니에요")
+      // console.log(num%2==0?"even":"odd")
+      let sum = (10 % 3 == 0) ? 10 : 20;
+    </script>
+
+    <li>shift 연산자
+      <pre style="display:inline;">( >>, << )</pre>
+    </li>
+    <script>
+      num = 2;
+      console.log(num << 1)
+      console.log(num >> 1)
+    </script>
+
+    <li>bit 연산자 ( |, &, ^, ~ ) </li>
+    <script>
+      console.log(2 | 1)
+      console.log(2 & 1)
+      console.log(2 ^ 1)
+      console.log(~2)
+    </script>
+  </ul>
 
 </body>
 
