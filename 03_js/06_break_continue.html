@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+  </style>
+  <script></script>
+</head>
+
+<body>
+  <h1>반복 구문에서 사용(break, continue)</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <script>
+    for (let i = 0; i < 10; i++) {
+      let tmp = i + 1;
+      if (tmp % 2 == 0) continue; // 아래문장 실행 안함.
+      console.log(tmp)
+    }
+    let i = 0
+    while (true) {
+      console.log(i)
+      if (i++ == 10) break;
+    }
+  </script>
+
+</body>
+
+</html>
