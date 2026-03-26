@@ -66,7 +66,45 @@
         }
         document.writeln("<br>")
       }
+    </script>
 
+    <li>while</li>
+    <pre>
+      while(조건) { }
+    </pre>
+    <script>
+      // 내마음의 숫자 맞추기 게임은 반복문이지만 변하는 인자가 존재하지 않음
+      const rand = Math.floor(Math.random() * 100) + 1
+      console.log(rand)
+      while (true) {
+        let input = prompt("==숫자 맞추기 게임==\n1~100사이의 숫자를 입력하세요")
+        if (input < rand) {
+          alert("작습니다.")
+        } else if (input > rand) alert("큽니다.")
+        else {
+          alert("정답입니다.")
+          break;
+        }
+      }
+    </script>
+    <li>do while :: 무조건 실행한 후 조건을 따짐</li>
+    <pre>
+      do {
+        명령문들
+      } while(조건)
+    </pre>
+    <script>
+      // 변하는 인자를 찾아라 => i
+      let i = 10; //초기값
+      do {
+        console.log(i--) // 증감
+      } while (i >= 0) //조건
+
+      i=10
+      const timer = setInterval(function () {
+        console.log(i)
+        if (i-- == 0) clearInterval(timer)
+      }, 1000)
     </script>
   </ul>
 </body>
