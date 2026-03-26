@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+  </style>
+  <script></script>
+</head>
+
+<body>
+  <h1>반복문 :: loop ( for, while, do while, for in )</h1>
+  <p>반복문은 규칙성을 찾아야 한다. 변인자는 초기값, 조건, 증감에 대한 설정이 필요.</p>
+  <p>변인자의 3가지 요인이 다르면 반복문도 그만큼 중첩된다.</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <ul>
+    <li>for</li>
+    <pre>
+      for(초기값; 조건; 증감) {
+        명령문
+      }
+    </pre>
+    <script>
+      for (let i = 1; i < 10; i++) {
+        // console.log("2 * " + i + "=" + (2 * i))
+        console.log(`2 * ${i} = ${2 * i}`)
+      }
+      for (let i = 2; i < 10; i++) {
+        for (let j = 1; j < 10; j++) {
+          console.log(`${i} * ${j} = ${i * j}`)
+        }
+      }
+      // for(;;){ }
+
+      console.log("====================================")
+      for (let i = 2; i < 10; i += 3) {
+        for (let j = 1; j < 10; j++) {
+          console.log(
+            (i + 2 != 10) ?
+              `${i + 0}*${j}=${(i + 0) * j}  ${i + 1}*${j}=${(i + 1) * j} ${i + 2}*${j}=${(i + 2) * j}` :
+              `${i + 0}*${j}=${(i + 0) * j}  ${i + 1}*${j}=${(i + 1) * j}`
+          )
+        }
+        console.log("")
+      }
+
+      for (let i = 2; i < 10; i += 3) {
+        for (let j = 1; j < 10; j++) {
+          for (let k = 0; k < 3; k++) {
+            if (i + k != 10) document.write(`${i + k}*${j}=${(i + k) * j}  `)
+          }
+          document.writeln("<br>")
+        }
+        document.writeln("<br>")
+      }
+
+    </script>
+  </ul>
+</body>
+
+</html>
