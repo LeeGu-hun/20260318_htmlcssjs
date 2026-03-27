@@ -108,7 +108,7 @@
 
       console.log("=== 배열 반복 처리 ===")
       // forEach(), map(), filter(), reduce(), some(), every()
-      let arr10 = [10,20,30]
+      let arr10 = [1,2,3,4,5]
       // forEach :: 배열의 원소와 인덱스로 접근하는 stream
       arr10.forEach(function(item, idx){
         console.log(idx, item)
@@ -127,8 +127,28 @@
         return item % 6 == 0
       })
       result = arr10.filter(item => item%6 == 0)
-
       console.log("filter() result:",result, arr10)
+
+      // reduce() :: 원소를 하나씩 제거해서 누적
+      var result = arr10.reduce(function (acc, current) {
+        return acc + current
+      }, 0)
+      result = arr10.reduce((acc, current) => acc + current, 0)
+      console.log("reduce() result:", result, arr10)
+      
+      // some() :: 하나라도 조건을 만족하면 true
+      var result = arr10.some(function (item) {
+        return item % 2 == 1
+      })
+      result= arr10.some(item => item % 2 == 1)
+      console.log("some() result:", result, arr10)
+
+      // every() :: 모두 조건을 만족하면 true
+      var result = arr10.every(function (item) {
+        return item % 2 == 1
+      })
+      result= arr10.every(item => item % 2 == 1)
+      console.log("every() result:", result, arr10)
 
       console.log("=== 배열 평탄화 ===")
       let arr8 = [1, [2, 3], [4, 5]]
