@@ -35,6 +35,7 @@
       }
       console.log(person.name); console.log(person.age); person.go()
     </script>
+
     <li>객체의 속성 추가, 수정, 삭제</li>
     <script>
       person.job = "Developer" //객체의 속성 추가
@@ -42,6 +43,7 @@
       delete person.isStudent; // 속성 삭제
       console.log(person)
     </script>
+
     <li>객체의 메서드(함수)</li>
     <script>
       const person2 = {
@@ -85,10 +87,10 @@
         age: 25,
       };
 
-      const { name, dan } = person3;
+      const { name, age } = person3;
       // 객체의 구조분해 할당은 키값이 같을 경우 할당된다.
       console.log(name); // Alice
-      console.log(dan);  // undefined
+      console.log(age);  // undefined
     </script>
 
     <li>객체 단축 문법 (ES6)</li>
