@@ -98,12 +98,48 @@
       myFnc(1, 1); myFnc(true, true); myFnc("hello", "world");
       myFnc(true, 1); myFnc([], 1); //[]와 문자열 +연산할 때 []는 ""(빈문자열)
       myFnc(1, 1, 1, 1, 1) // 정의된 매개변수의 갯수와 다를 때는 정의된 매개변수만 처리
+
       console.log("... : spread operator 전개 연산자")
       var arr1 = [1, 2]; var arr2 = [3, 4]
       var arr3 = [...arr1, ...arr2] //전개 연산자로 매개변수를 combined
       console.log(arr3)
-      var sum = function (a, b, c) { return a + b + c + d; }
-      console.log()
+      var sum = function (a, b, c) { return a + b + c; }
+      console.log(sum(...arr3))
+
+      console.log("... : rest parameter 나머지 매개변수")
+      function sumAll(...nums){
+        tot = 0;
+        for(let i=0;i<nums.length;i++){
+          tot += nums[i]
+        }
+        console.log(tot);
+      }
+      sumAll(1,2); sumAll(1,2,3,4,5,6,7,8,9, 10); sumAll(); //3 55 0
+      function myFnc2(a, b, ...args) {
+        console.log(a, b, args.toString())
+      }
+      myFnc2(1, 2); myFnc2(1,2,3,4,5); //OK
+      myFnc2(); // undefined undefined ''
+      // function myFnc3(...args, a, b){} // 나머지 매개변수는 반드시 끝에 있어야 함.
+    </script>
+    <li>익명함수(Anonymous Function) 또는 함수 표현식(Function Expression)</li>
+    <p>익명함수는 함수 이름이 없다. 함수 표현식은 익명함수를 변수에 할당</p>
+    <script>
+      // 함수 호이스팅 안됨. 변수이기 때문
+      let anonymousFnc = function() {
+        console.log("익명함수이자 함수표현식입니다.")
+      }
+    </script>
+
+    <li>Closure 현상 :: 지역변수가 {} 밖에서도 사용되는 현상</li>
+    <script>
+      function multiplier(x) {
+        return function(y) {
+          return x * y;
+        }
+      }
+      const mVar = multiplier(2)
+      console.log(mVar(2));
     </script>
   </ol>
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style></style>
+  <script></script>
+</head>
+
+<body>
+  <h1>화살표 함수(arrow function :: 함수의 축약형)</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <p></p>
+  <ol>
+    <li>원형 함수는 화살표 함수로 변형 불가</li>
+    <li>익명 함수만 화살표함수로 변형가능</li>
+    <script>
+      var fnc1 = function () {
+        console.log("매개변수(X), 리턴(X)")
+      }
+      fnc1 = () => { console.log("매개변수(X), 리턴(X)") }
+      fnc1 = () => console.log("매개변수(X), 리턴(X)")
+      fnc1()
+
+      var fnc2 = function (a) {
+        console.log("매개변수(O), 리턴(X)")
+      }
+      fnc2 = (a) => console.log("매개변수(O), 리턴(X)")
+      fnc2 = a => console.log("매개변수(O), 리턴(X)") // 명령문이 한개라서 {}생략. return 아님.
+      fnc2()
+
+      var fnc3 = function () {
+        return ("매개변수(X), 리턴(O)")
+      }
+      fnc3 = () => { return ("매개변수(X), 리턴(O)") }
+      fnc3 = () => ("매개변수(X), 리턴(O)") // return을 생략::값이기 때문
+      console.log(fnc3())
+
+      var fnc4 = function (a) {
+        return a + "매개변수(O), 리턴(O)"
+      }
+      fnc4 = a => a + "매개변수(O), 리턴(O)"
+      console.log(fnc4())
+    </script>
+
+    <li>Quiz. 중첩 함수의 익명함수를 화살표 함수로 축약</li>
+    <script>
+      var fncInFnc = function (a) {
+        inFnc = function (b) {
+          return a + b;
+        }
+        return inFnc
+      }
+      fncInFnc = a => b => a + b;
+    </script>
+
+  </ol>
+
+</body>
+
+</html>
