@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style></style>
+  <script>
+    window.onload = function () {
+      var output = ''
+      for (let i = 0; i < 10; i++) {
+        output += `<h1>Header - ${i}</h1>`
+      }
+      console.log(output)
+      const headerBox = document.querySelector("#headerBox")
+      // headerBox.textContent = output
+      headerBox.innerHTML = output
+      headerBox.value = output // 입력양식 태그가 아니면 value속성 부재
+      document.querySelector("#txt").value = output
+    }
+  </script>
+</head>
+
+<body>
+  <h1>글자 조작하기</h1>
+  <p>textContent, innerHTML</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <div id="headerBox"></div>
+  <input type="text" name="" id="txt">
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style></style>
+  <script src="/js/script.js"></script>
+  <script>
+    window.onload = function () {
+      const clock = document.querySelector("#clock")
+      clock.textContent = now()
+      setInterval(
+        function () {
+          clock.textContent = now()
+        }
+        ,1000
+      )
+    }
+    
+  </script>
+</head>
+
+<body>
+  <h1>속성 조작하기</h1>
+  <p>setAttribute(), getAttribute(), removeAttribute(), hasAttribute()</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <h2 id="clock"></h2>
+  <img data-url="https://placehold.co" id="image" alt="image">
+
+</body>
+
+</html>
