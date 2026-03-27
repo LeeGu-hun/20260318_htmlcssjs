@@ -29,10 +29,10 @@
       for (let i = 0; i < scores.length; i++) {
         tot = tot + scores[i]
       }
-      for(let idx in scores) { // index로 접근
+      for (let idx in scores) { // index로 접근
         console.log(idx, scores[idx])
       }
-      for(let score of scores) { // 원소로 접근
+      for (let score of scores) { // 원소로 접근
         console.log(score);
       }
       console.log(`합계는 ${tot} 평균은 ${Math.floor(tot / scores.length)}`)
@@ -90,7 +90,7 @@
         return a - b; // 오름차순
         // return b-a; // 내림차순
       })
-      arr6.sort((a,b) => a-b)
+      arr6.sort((a, b) => a - b)
       console.log("sort() 정렬 후:", arr6)
 
       console.log("=== 배열 탐색, 존재여부 바꾸기 ===")
@@ -101,33 +101,33 @@
       console.log(arr7.find(function (item) {
         return item == 'b'
       })) // 조건에 맞는 첫 번째 값 찾기
-      console.log(arr7.find(item => item=='b'))
+      console.log(arr7.find(item => item == 'b'))
 
       // findIndex() 조건에 맞는 첫 번째 index 찾기
       console.log("findIndex()", arr7.findIndex(item => item > "b")) // 2
 
       console.log("=== 배열 반복 처리 ===")
       // forEach(), map(), filter(), reduce(), some(), every()
-      let arr10 = [1,2,3,4,5]
+      let arr10 = [1, 2, 3, 4, 5]
       // forEach :: 배열의 원소와 인덱스로 접근하는 stream
-      arr10.forEach(function(item, idx){
+      arr10.forEach(function (item, idx) {
         console.log(idx, item)
       });
-      arr10.forEach( (item, idx) => console.log(idx, item))
+      arr10.forEach((item, idx) => console.log(idx, item))
 
       // map() :: 배열의 각각의 원소에 접근 후 다시 배열의 원소를 갱신할 때
       var result = arr10.map(function (item) {
         return item * 2
       })
-      var result = arr10.map(item => item*2)
-      console.log("map() result:",result, arr10)
+      var result = arr10.map(item => item * 2)
+      console.log("map() result:", result, arr10)
 
       // filter() :: 배열의 조건을 걸어서 일부만 추출
-      var result = arr10.filter(function (item){
+      var result = arr10.filter(function (item) {
         return item % 6 == 0
       })
-      result = arr10.filter(item => item%6 == 0)
-      console.log("filter() result:",result, arr10)
+      result = arr10.filter(item => item % 6 == 0)
+      console.log("filter() result:", result, arr10)
 
       // reduce() :: 원소를 하나씩 제거해서 누적
       var result = arr10.reduce(function (acc, current) {
@@ -135,25 +135,31 @@
       }, 0)
       result = arr10.reduce((acc, current) => acc + current, 0)
       console.log("reduce() result:", result, arr10)
-      
+
       // some() :: 하나라도 조건을 만족하면 true
       var result = arr10.some(function (item) {
         return item % 2 == 1
       })
-      result= arr10.some(item => item % 2 == 1)
+      result = arr10.some(item => item % 2 == 1)
       console.log("some() result:", result, arr10)
 
       // every() :: 모두 조건을 만족하면 true
       var result = arr10.every(function (item) {
         return item % 2 == 1
       })
-      result= arr10.every(item => item % 2 == 1)
+      result = arr10.every(item => item % 2 == 1)
       console.log("every() result:", result, arr10)
 
       console.log("=== 배열 평탄화 ===")
       let arr8 = [1, [2, 3], [4, 5]]
       console.log(arr8.flat()) // [1,2,3,4,5] 1 차원 배열로 평탄화
-      // flatMap()
+
+      // flatMap() :: map() 후에 flat()까지 한번에 처리하는 함수
+      var result = arr10.flatMap(function (item) {
+        return [item, item * 2] // 배열의 원소 item을 return으로 지정
+      })
+      var result = arr10.flatMap(item => [item, item * 2])
+      console.log("flatMap() result:", result, arr10)
 
       console.log("=== 배열 확인 ===")
       console.log(Array.isArray(arr8)) // 배열 맞음 true
@@ -176,11 +182,11 @@
     </script>
     <li>배열 구조 분해 할당(Array Destructing Assignment)</li>
     <script>
-      const arr9 = [1,2,3]
-      const [a,b,c] = arr9
+      const arr9 = [1, 2, 3]
+      const [a, b, c] = arr9
       console.log(a, b, c)
-      const [x, , z] = [10,20,30]
-      console.log(x,z)
+      const [x, , z] = [10, 20, 30]
+      console.log(x, z)
     </script>
   </ol>
 
