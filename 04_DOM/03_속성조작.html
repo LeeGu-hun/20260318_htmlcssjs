@@ -20,6 +20,10 @@
         }
         ,1000
       )
+      const img = document.querySelector("#image")
+      img.setAttribute('src', img.getAttribute('data-url')+"/200x100")
+      img.removeAttribute('data-url')
+      console.log(img.hasAttribute('alt'));
     }
     
   </script>

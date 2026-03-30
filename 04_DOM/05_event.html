@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    * {
+      margin: 0;
+    }
+  </style>
+  <script src="/js/script.js"></script>
+  <script>
+    window.onload = function () {
+      const btnSubmit = document.querySelector('form>button')
+      const id = document.querySelector('#id')
+      const pass = document.querySelector('#pass')
+      
+      btnSubmit.onclick = function (e) {
+        //e.preventDefault();
+        if(id.value=="") {alert("아이디를 확인해주세요");return;}
+        if(pass.value=="") {alert("비밀번호를 확인해주세요");return;}
+        document.querySelector('#form').submit();
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>이벤트 다루기: 행위가 일어났을 때 처리</h1>
+  <p></p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <form id="form" action="/" method="get">
+    <input type="text" name="id" id="id" required>
+    <input type="password" name="pass" id="pass">
+    <button type="button">로그인</button>
+  </form>
+
+</body>
+
+</html>
