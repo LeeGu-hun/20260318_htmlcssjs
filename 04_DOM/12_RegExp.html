@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style></style>
+  <script src="/js/script.js"></script>
+  <script>
+    window.onload = function () {
+
+    }
+  </script>
+</head>
+
+<body>
+  <h1>정규표현식(Regular Expression)</h1>
+  <p>아이디 /^[a-z0-9]{5,12}$/ :: 영문 소문자, 숫자 조합 (5~12자)</p>
+  <p>비밀번호 /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/ :: 최소 8자, 문자 및 숫자 포함</p>
+  <p>이메일 /^[^\s@]+@[^\s@]+\.[^\s@]+$/ :: 일반적인 이메일 형식</p>
+  <p>숫자만 /^[0-9]+$/ :: 문자 제외 숫자만 입력</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <input type="text" name="email" id="email">
+  <button id="btn">검증</button>
+
+  <script>
+    const validateField = (value, type) => {
+      const patterns = {
+        userId: /^[a-z0-9]{5,12}$/,
+        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        // 최소 8자, 대문자, 소문자, 숫자, 특수문자 각 1개 이상 포함 (강력한 보안)
+        password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d(@$!%*?&]{8,}$/
+      };
+
+      return patterns[type].test(value);
+    };
+    document.querySelector('#btn').onclick = function () {
+      const userEmail = document.querySelector('#email').value
+      if (validateField(userEmail, 'email')) {
+        console.log("올바른 이메일 형식입니다.");
+      } else {
+        console.log("이메일 형식을 확인해주세요.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

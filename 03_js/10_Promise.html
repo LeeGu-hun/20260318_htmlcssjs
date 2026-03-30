@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style></style>
+  <script></script>
+</head>
+
+<body>
+  <h1>Promise 객체와 fetch-then</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <p></p>
+  <ul>
+    <li>Promise가 필요한 이유는 비동기(Asynchronous) 작업을 위해서 이다.</li>
+    <li>Promise가 중요한 진짜 이유: 콜백 지옥 해결</li>
+    <pre>
+      setTimeout(() => {
+        console.log("1번 작업 완료");
+
+        setTimeout(() => {
+          console.log("2번 작업 완료");
+
+          setTimeout(() => {
+            console.log("3번 작업 완료");
+          }, 1000);
+
+        }, 1000);
+
+      }, 1000);
+      ================ 개선 후 ================ 
+      new Promise(function(resolve) {
+        resolve(10);
+      })
+        .then(function(result) {
+          console.log(result); // 10
+          return result * 2;
+        })
+        .then(function(result) {
+          console.log(result); // 20
+          return result * 3;
+        })
+        .then(function(result) {
+          console.log(result); // 60
+        });
+
+    </pre>
+    <li>Promise의 3가지 상태 (States)</li>
+    <ol>
+      <li>Pending (대기): 비동기 처리가 아직 완료되지 않은 초기 상태 (진동벨을 막 받은 상태)</li>
+      <li>Fulfilled (이행): 비동기 처리가 성공적으로 완료되어 결과 값을 반환한 상태 (음식이 나온 상태)</li>
+      <li>Rejected (거부): 비동기 처리가 실패하거나 오류가 발생한 상태 (재료 소진으로 주문이 취소된 상태)</li>
+    </ol>
+    <div class="login-card">
+      <h2>로그인</h2>
+      <input type="text" id="userId" placeholder="아이디 (admin)">
+      <input type="password" id="userPw" placeholder="비밀번호 (1234)">
+      <button id="loginBtn">로그인하기</button>
+      <div id="message"></div>
+    </div>
+    <script>
+      // 1. 비동기 처리를 담당하는 Promise 함수
+      function loginRequest(id, pw) {
+        return new Promise((resolve, reject) => {
+          // 서버에 데이터가 가고 오는 시간을 2초로 가정
+          setTimeout(() => {
+            if (id === 'admin' && pw === '1234') {
+              resolve({ name: '홍길동', level: 'VIP' }); // 성공 시 객체 반환
+            } else {
+              reject('아이디나 비번이 틀렸어요! (admin / 1234)'); // 실패 시 메시지 반환
+            }
+          }, 2000);
+        });
+      }
+
+      // 2. 화면 요소를 제어하는 이벤트 로직
+      const btn = document.getElementById('loginBtn');
+      const msg = document.getElementById('message');
+
+      btn.addEventListener('click', () => {
+        const id = document.getElementById('userId').value;
+        const pw = document.getElementById('userPw').value;
+
+        // 초기화 및 로딩 표시
+        msg.innerText = "서버와 연결 중입니다...";
+        msg.className = "";
+        btn.disabled = true;
+
+        // Promise 실행 (.then / .catch 체이닝)
+        loginRequest(id, pw)
+          .then((user) => {
+            // 성공(resolve)했을 때 실행
+            msg.innerText = `🎉 ${user.name}(${user.level})님, 환영합니다!`;
+            msg.className = "success";
+          })
+          .catch((errorMsg) => {
+            // 실패(reject)했을 때 실행
+            msg.innerText = `❌ ${errorMsg}`;
+            msg.className = "error";
+          })
+          .finally(() => {
+            // 성공하든 실패하든 마지막에 실행
+            btn.disabled = false;
+          });
+      });
+    </script>
+    <li>fetch-then</li>
+    <div id="result"></div>
+    <button id="fetchBtn">fetchBtn</button>
+    <script>
+      const resultDiv = document.querySelector('#result');
+      const fetchBtn = document.querySelector('#fetchBtn');
+
+      fetchBtn.addEventListener('click', () => {
+        resultDiv.innerText = '로딩 중...';
+
+        fetch('https://jsonplaceholder.typicode.com/users/1')
+          .then(res => res.json())
+          .then(user => {
+            // 화면에 데이터 출력
+            resultDiv.innerHTML = `<h3>사용자 정보</h3><p>이름: ${user.name}</p><p>이메일: ${user.email}</p>`;
+          })
+          .catch(err => {
+            resultDiv.innerText = '데이터를 불러오는 데 실패했습니다.';
+          });
+      });
+    </script>
+
+  </ul>
+
+</body>
+
+</html>
