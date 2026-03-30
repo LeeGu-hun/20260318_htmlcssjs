@@ -16,6 +16,7 @@
       const id = document.querySelector('#id')
       const pass = document.querySelector('#pass')
 
+      // submit과 button의 차이
       btnSubmit.onclick = function (e) {
         e.preventDefault();
         // 유효성 검사(validation check)
@@ -32,7 +33,6 @@
         document.querySelector('#form').submit();
       }
 
-      // event를 주는 방식 2가지
       const box = document.querySelector('#box')
       box.onclick = (e) => {
         alert("box1")
@@ -40,6 +40,7 @@
       box.onclick = (e) => {
         alert("box2")
       }
+
       document.querySelector('#alink').addEventListener("click", (e) => {
         // alink 클릭 => box 이벤트도 전파되는데 이거을 막기 위함.
         // 자식 => 부모 :: Bubbling
@@ -49,10 +50,10 @@
       document.querySelector('#alink').addEventListener("click", (e) => {
         alert("alink2")
       })
-      document.body.addEventListener("click", function (e) {
-        alert("body");
-        e.stopPropagation();
-      })
+      // document.body.addEventListener("click", function (e) {
+      //   alert("body");
+      //   e.stopPropagation();
+      // })
     }
   </script>
 </head>
@@ -62,31 +63,57 @@
   <p></p>
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
-  <ol>
+  <ul>
     <li>이벤트를 처리하는 방식 </li>
-    <ul>
-      <li>Event Handler Property 방식 :: 가장 마지막 정의된 것 적용</li>
-      <p>스크립트의 요소.onclick, onkeypress, onchange, onmouseover, ...</p>
-      <li>addEventListener("click", 콜백함수) 정의(권장) :: 누적</li>
-      <p>addEventListener방식은 이벤트가 누적된다.</p>
+    <ol>
+      <li>Event Handler Property 방식 :: 복수일때 가장 마지막 정의된 것 적용</li>
+      <span>스크립트의 요소.onclick, onkeypress, onchange, onmouseover, ...</span>
+      <li>addEventListener("click", 콜백함수) 정의(권장) :: 복수일때 누적</li>
+      <span>addEventListener방식은 이벤트가 누적된다.</span>
       <li>Inline Event Handler</li>
-      <p><xmp> <button onclick="alert('hello')">버튼</button> </xmp></p>
-    </ul>
+      <span>
+        <xmp> <button onclick="alert('hello')">버튼</button> </xmp>
+      </span>
+      <div style="width:200px;height:100px;background: pink;" id="box">
+        <a href="#" id="alink" style="background: blueviolet;">link</a>
+      </div>
+    </ol>
     <li>이벤트의 전파 3단계</li>
-    <ul>
+    <ol>
       <li>Capturing Phase(캡쳐링) :: 부모 => 자식</li>
       <li>Target Phase(타겟) :: 타겟된 실제 요소</li>
       <li>Bubbling Phase(버블링) :: 자식 => 부모</li>
-    </ul>
-  </ol>
-  <form id="form" action="/" method="get">
-    <input type="text" name="id" id="id" required>
-    <input type="password" name="pass" id="pass">
-    <button type="submit">로그인</button>
-  </form>
-  <div style="width:200px;height:100px;background: pink;" id="box">
-    <a href="#" id="alink" style="background: blueviolet;">link</a>
-  </div>
+    </ol>
+    <div id="outer" style="padding:30px; background:lightcoral;">
+      outer
+      <div id="inner" style="padding:30px; background:lightyellow;">
+        inner
+        <button id="btn">클릭</button>
+      </div>
+    </div>
+    <script>
+      const outer = document.getElementById("outer");
+      const inner = document.getElementById("inner");
+      const btn = document.getElementById("btn");
+
+      outer.addEventListener("click", () => alert("outer - bubbling"));
+      outer.addEventListener("click", () => alert("outer - capturing"), true);
+
+      inner.addEventListener("click", () => alert("inner - bubbling"));
+      inner.addEventListener("click", () => alert("inner - capturing"), true);
+
+      btn.addEventListener("click", () => alert("button 클릭"));
+    </script>
+
+    <li>submit, button 타입의 event와 preventDefault()</li>
+    <form id="form" action="/" method="get">
+      <input type="text" name="id" id="id" required>
+      <input type="password" name="pass" id="pass">
+      <button type="submit">로그인</button>
+    </form>
+  </ul>
+
+
 
 </body>
 
