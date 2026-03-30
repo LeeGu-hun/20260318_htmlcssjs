@@ -18,7 +18,7 @@
 
       // submit과 button의 차이
       btnSubmit.onclick = function (e) {
-        e.preventDefault();
+        e.preventDefault(); // 기본 설정된 이벤트를 막을 때
         // 유효성 검사(validation check)
         if (id.value == "") {
           alert("아이디를 확인해주세요");
@@ -32,28 +32,6 @@
         }
         document.querySelector('#form').submit();
       }
-
-      const box = document.querySelector('#box')
-      box.onclick = (e) => {
-        alert("box1")
-      }
-      box.onclick = (e) => {
-        alert("box2")
-      }
-
-      document.querySelector('#alink').addEventListener("click", (e) => {
-        // alink 클릭 => box 이벤트도 전파되는데 이거을 막기 위함.
-        // 자식 => 부모 :: Bubbling
-        // e.stopPropagation();
-        alert("alink1")
-      })
-      document.querySelector('#alink').addEventListener("click", (e) => {
-        alert("alink2")
-      })
-      // document.body.addEventListener("click", function (e) {
-      //   alert("body");
-      //   e.stopPropagation();
-      // })
     }
   </script>
 </head>
@@ -64,7 +42,7 @@
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
   <ul>
-    <li>이벤트를 처리하는 방식 </li>
+    <li>이벤트를 부여하는 방식 3가지와 stopImmediatePropagation()</li>
     <ol>
       <li>Event Handler Property 방식 :: 복수일때 가장 마지막 정의된 것 적용</li>
       <span>스크립트의 요소.onclick, onkeypress, onchange, onmouseover, ...</span>
@@ -77,8 +55,20 @@
       <div style="width:200px;height:100px;background: pink;" id="box">
         <a href="#" id="alink" style="background: blueviolet;">link</a>
       </div>
+      <script>
+        const box = document.querySelector('#box')
+        box.onclick = (e) => {alert("box1")}
+        box.onclick = (e) => {alert("box2")}
+        document.querySelector('#alink').addEventListener("click", 
+          (e) => {
+            alert("alink1");
+            e.stopImmediatePropagation(); //stopPropagation()보다 강력 같은 요소마적 막음.
+          }
+        )
+        document.querySelector('#alink').addEventListener("click", (e) => {alert("alink2")})
+      </script>
     </ol>
-    <li>이벤트의 전파 3단계</li>
+    <li>이벤트의 전파 3단계와 stopPropagation() </li>
     <ol>
       <li>Capturing Phase(캡쳐링) :: 부모 => 자식</li>
       <li>Target Phase(타겟) :: 타겟된 실제 요소</li>
@@ -102,7 +92,11 @@
       inner.addEventListener("click", () => alert("inner - bubbling"));
       inner.addEventListener("click", () => alert("inner - capturing"), true);
 
-      btn.addEventListener("click", () => alert("button 클릭"));
+      btn.addEventListener("click", 
+        (e) => {
+          alert("button 클릭"); 
+          e.stopPropagation()} // 전파를 막을 때
+      );
     </script>
 
     <li>submit, button 타입의 event와 preventDefault()</li>
