@@ -8,24 +8,51 @@
   <title>Document</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
-  <style>
-    * {
-      margin: 0;
-    }
-  </style>
+  <style></style>
   <script src="/js/script.js"></script>
   <script>
     window.onload = function () {
       const btnSubmit = document.querySelector('form>button')
       const id = document.querySelector('#id')
       const pass = document.querySelector('#pass')
-      
+
       btnSubmit.onclick = function (e) {
-        //e.preventDefault();
-        if(id.value=="") {alert("아이디를 확인해주세요");return;}
-        if(pass.value=="") {alert("비밀번호를 확인해주세요");return;}
+        e.preventDefault();
+        // 유효성 검사(validation check)
+        if (id.value == "") {
+          alert("아이디를 확인해주세요");
+          id.focus();
+          return;
+        }
+        if (pass.value == "") {
+          alert("비밀번호를 확인해주세요");
+          pass.focus()
+          return;
+        }
         document.querySelector('#form').submit();
       }
+
+      // event를 주는 방식 2가지
+      const box = document.querySelector('#box')
+      box.onclick = (e) => {
+        alert("box1")
+      }
+      box.onclick = (e) => {
+        alert("box2")
+      }
+      document.querySelector('#alink').addEventListener("click", (e) => {
+        // alink 클릭 => box 이벤트도 전파되는데 이거을 막기 위함.
+        // 자식 => 부모 :: Bubbling
+        // e.stopPropagation();
+        alert("alink1")
+      })
+      document.querySelector('#alink').addEventListener("click", (e) => {
+        alert("alink2")
+      })
+      document.body.addEventListener("click", function (e) {
+        alert("body");
+        e.stopPropagation();
+      })
     }
   </script>
 </head>
@@ -35,11 +62,31 @@
   <p></p>
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
+  <ol>
+    <li>이벤트를 처리하는 방식 </li>
+    <ul>
+      <li>Event Handler Property 방식 :: 가장 마지막 정의된 것 적용</li>
+      <p>스크립트의 요소.onclick, onkeypress, onchange, onmouseover, ...</p>
+      <li>addEventListener("click", 콜백함수) 정의(권장) :: 누적</li>
+      <p>addEventListener방식은 이벤트가 누적된다.</p>
+      <li>Inline Event Handler</li>
+      <p><xmp> <button onclick="alert('hello')">버튼</button> </xmp></p>
+    </ul>
+    <li>이벤트의 전파 3단계</li>
+    <ul>
+      <li>Capturing Phase(캡쳐링) :: 부모 => 자식</li>
+      <li>Target Phase(타겟) :: 타겟된 실제 요소</li>
+      <li>Bubbling Phase(버블링) :: 자식 => 부모</li>
+    </ul>
+  </ol>
   <form id="form" action="/" method="get">
     <input type="text" name="id" id="id" required>
     <input type="password" name="pass" id="pass">
-    <button type="button">로그인</button>
+    <button type="submit">로그인</button>
   </form>
+  <div style="width:200px;height:100px;background: pink;" id="box">
+    <a href="#" id="alink" style="background: blueviolet;">link</a>
+  </div>
 
 </body>
 
