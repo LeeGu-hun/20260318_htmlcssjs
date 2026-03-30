@@ -20,7 +20,7 @@
           var selectText = maker.options[maker.selectedIndex].text; //option의 text
           console.log(selectValue+"/"+selectText);
           var arr = models[selectValue];
-          model.innerHTML="";
+          // model.innerHTML="";
           var tmp ='';
           for(let i=0;i<arr.length;i++){
             tmp += `<option value="${i}">${arr[i]}</option>`
